@@ -9,6 +9,7 @@ router.post('/register', async (req, res) => {
             message: 'Usuario registrado exitosamente.',
             data: user
         });
+
     }catch (error) {
         res.status(400).json(error);
     }
@@ -28,5 +29,13 @@ router.post('/login',async (req, res) => {
     }
        
 });
+
+router.get("account/register", async (req, res) => {
+    try {
+        res.render("register_form")
+    } catch (error) {
+        res.status(400).json(error);
+    } 
+})
 
 module.exports = router;
